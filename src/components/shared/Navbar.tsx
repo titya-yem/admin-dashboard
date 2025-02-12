@@ -7,12 +7,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import {
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from "@clerk/nextjs";
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { SideBar } from "@/constants/SideBar";
 import toggle from "@/public/svg/menu.svg";
 import { Box, Flex, Text } from "@radix-ui/themes";
@@ -24,7 +19,7 @@ import { Button } from "../ui/button";
 
 const Navbar = () => {
   const pathName = usePathname();
-  const [close, setClose] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <header className="flex justify-between items-center md:hidden px-4">
@@ -35,7 +30,7 @@ const Navbar = () => {
       </Box>
 
       <Box>
-        <Sheet>
+        <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger>
             <Image src={toggle} alt="toggle menu" />
           </SheetTrigger>
@@ -50,6 +45,7 @@ const Navbar = () => {
                     <Link
                       href={li.link}
                       className="text-gray-400 dark:text-white"
+                      onClick={() => setOpen(!open)}
                     >
                       <div
                         className={`flex items-center gap-4 pl-7 py-4 hover:font-medium duration-200 ${
