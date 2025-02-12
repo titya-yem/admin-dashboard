@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "@radix-ui/themes/styles.css";
-import { Theme } from "@radix-ui/themes";
+import { Box, Theme } from "@radix-ui/themes";
 import { ClerkProvider } from "@clerk/nextjs";
+import Navbar from "@/components/shared/Navbar";
+import SideBarNav from "@/components/shared/SideBarNav";
 
 export const metadata: Metadata = {
   title: "Kith Financial",
@@ -18,7 +20,15 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={`antialiased`}>
-          <Theme>{children}</Theme>
+          <Theme>
+            <div className="flex flex-col md:flex-row max-w-[1440px] mx-auto">
+              <Box>
+                <Navbar />
+                <SideBarNav />
+              </Box>
+              {children}
+            </div>
+          </Theme>
         </body>
       </html>
     </ClerkProvider>
