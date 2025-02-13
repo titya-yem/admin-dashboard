@@ -33,13 +33,13 @@ export const SideBar: SideBarType[] = [
     link: "/accounts",
   },
   {
-    image: payment,
-    name: "Payments",
-    link: "/payments",
-  },
-  {
     image: report,
     name: "Reports",
     link: "/reports",
+  },
+  {
+    image: payment,
+    name: "Subscriptions",
+    link: "/subscriptions",
   },
 ];
