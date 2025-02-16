@@ -16,13 +16,19 @@ datasource db {
 // we create Id with uuid and get id, name, and email from Clerk
 // we check is user subscribe or not? subscribe time, and subscribe id from Stripe
 model User {
-  id String @id @default(uuid())
-  userId String @unique
-  userName String
-  email String
-  subscriptionActive Boolean @default(false)
-  subscriptionTier String?
-  stripeSubscriptionId String? @unique
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id                   String   @id @default(uuid())
+  userId               String   @unique // Clerk user ID
+  userName             String
+  email                String   @unique
+  subscriptionActive   Boolean  @default(false)
+  subscriptionTier     String?
+  stripeSubscriptionId String?  @unique
+  role                 Role     @default(User)
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+}
+
+enum Role {
+  Admin
+  User
 }
