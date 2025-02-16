@@ -34,7 +34,7 @@ const Navbar = () => {
           <SheetTrigger>
             <Image src={toggle} alt="toggle menu" />
           </SheetTrigger>
-          <SheetContent className="w-2/3">
+          <SheetContent className="w-[70%]">
             <SheetHeader>
               <SheetTitle className="text-lg text-center py-6 font-bold text-[#6055E0]">
                 Kith Financial
