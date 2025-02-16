@@ -1,11 +1,5 @@
-import DynamicCards from "@/components/shared/DynamicCards";
-
 const Homepage = () => {
-  return (
-    <>
-      <DynamicCards />
-    </>
-  );
+  return <div>hello</div>;
 };
 
 export default Homepage;
