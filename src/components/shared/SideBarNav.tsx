@@ -1,33 +1,32 @@
 "use client";
 
 import { SideBar } from "@/constants/SideBar";
-import { Box, Flex, Text } from "@radix-ui/themes";
+import { Box, Text } from "@radix-ui/themes";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import { Button } from "../ui/button";
 
 const SideBarNav = () => {
   const pathName = usePathname();
 
   return (
-    <aside className="hidden md:block px-4 w-[180px] lg:w-[220px] h-screen border rounded-md">
-      {/* Logo */}
+    <aside className="pl-2">
       <Box>
-        <h1 className="text-xl lg:text-2x text-center py-8 font-bold text-[#6055E0]">
+        <h1 className="text-lg md:text-xl lg:text-2xl py-8 font-bold text-[#6055E0]">
           Kith Financial
         </h1>
       </Box>
-
-      {/* SideBar */}
+      
       <Box>
+        <Text as="p" className="text-sm font-medium text-gray-400">
+          Menu
+        </Text>
         {SideBar.map((li) => (
           <ul key={li.link}>
             <li>
               <Link href={li.link} className="text-gray-400 dark:text-white">
                 <div
-                  className={`flex items-center gap-4 pl-4 py-4 lg:mt-1 hover:font-medium duration-200 ${
+                  className={`flex items-center gap-3 pl-[6px] md:pl-1 md:px-3 py-2 mt-2 duration-200 ${
                     li.link === pathName
                       ? "font-medium rounded-md text-white dark:text-gray-400 bg-[#7D29D7]"
                       : ""
@@ -36,31 +35,20 @@ const SideBarNav = () => {
                   <Image
                     src={li.image}
                     alt={li.name}
-                    className={`w-[30px] hidden lg:block ${
+                    className={`w-[25px] ${
                       li.link === pathName
                         ? "invert-[10%] sepia-[100%] saturate-[300%] hue-rotate-[250deg]"
                         : ""
                     }`}
                   />
-                  <Text as="p">{li.name}</Text>
+                  <Text as="p" className="hidden md:block text-base">
+                    {li.name}
+                  </Text>
                 </div>
               </Link>
             </li>
           </ul>
         ))}
-
-        {/* Sign In & Profile */}
-        <Box className="mt-16 text-center">
-          <SignedOut>
-            <Button asChild className="w-full">
-              <SignInButton />
-            </Button>
-          </SignedOut>
-
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
-        </Box>
       </Box>
     </aside>
   );
