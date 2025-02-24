@@ -1,5 +1,12 @@
+import Navbar from "@/components/shared/Navbar";
+
 const Homepage = () => {
-  return <div className="bg-gray-100">hello</div>;
+  return (
+    <div>
+      {/* Navbar */}
+      <Navbar />
+    </div>
+  );
 };
 
 export default Homepage;

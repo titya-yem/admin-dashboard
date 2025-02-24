@@ -12,11 +12,11 @@ const SideBarNav = () => {
   return (
     <aside className="pl-2">
       <Box>
-        <h1 className="text-lg md:text-xl lg:text-2xl py-8 font-bold text-[#6055E0]">
+        <h1 className="text-lg md:text-xl lg:text-2xl py-6 font-bold text-[#6055E0]">
           Kith Financial
         </h1>
       </Box>
-      
+
       <Box>
         <Text as="p" className="text-sm font-medium text-gray-400">
           Menu
@@ -26,10 +26,10 @@ const SideBarNav = () => {
             <li>
               <Link href={li.link} className="text-gray-400 dark:text-white">
                 <div
-                  className={`flex items-center gap-3 pl-[6px] md:pl-1 md:px-3 py-2 mt-2 duration-200 ${
+                  className={`flex items-center gap-3 pl-[6px] md:pl-1 md:px-3 py-2 mt-2 duration-200 w-[38px] md:w-full rounded-md ${
                     li.link === pathName
-                      ? "font-medium rounded-md text-white dark:text-gray-400 bg-[#7D29D7]"
-                      : ""
+                      ? "font-medium text-white dark:text-gray-400 bg-[#7D29D7]"
+                      : "hover:bg-gray-200"
                   }`}
                 >
                   <Image
