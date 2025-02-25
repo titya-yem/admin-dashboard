@@ -17,7 +17,7 @@ const SideBarNav = () => {
         </h1>
       </Box>
 
-      <Box>
+      <Box className="w-[38px] md:w-full">
         <Text as="p" className="text-sm font-medium text-gray-400">
           Menu
         </Text>
@@ -26,7 +26,7 @@ const SideBarNav = () => {
             <li>
               <Link href={li.link} className="text-gray-400 dark:text-white">
                 <div
-                  className={`flex items-center gap-3 pl-[6px] md:pl-1 md:px-3 py-2 mt-2 duration-200 w-[38px] md:w-full rounded-md ${
+                  className={`flex items-center gap-3 pl-[6px] md:pl-1 md:px-3 py-2 mt-2 duration-200 rounded-md ${
                     li.link === pathName
                       ? "font-medium text-white dark:text-gray-400 bg-[#7D29D7]"
                       : "hover:bg-gray-200"

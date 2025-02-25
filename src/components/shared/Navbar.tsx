@@ -1,19 +1,19 @@
 import { Box, Flex, TextField } from "@radix-ui/themes";
-import searchIcon from "@/public/svg/Search.svg";
+import chatIcon from "@/public/svg/chat.svg";
 import Image from "next/image";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 const Navbar = () => {
   return (
-    <header className="pl-4 md:mt-6">
-      <Flex justify="between" align="center">
+    <header className="mt-6">
+      <Flex justify="center" align="center" className="gap-x-8">
         {/* Search */}
-        <div className="hidden md:block w-[1200px]">
+        <div className="hidden md:block w-[500px] lg:w-[1240px]">
           {/* I will make this input chatable with AI */}
           <TextField.Root placeholder="Chat with AI">
             <TextField.Slot>
               <Image
-                src={searchIcon}
+                src={chatIcon}
                 alt="Search icon"
                 className="w-full h-[16px]"
               />
@@ -22,7 +22,7 @@ const Navbar = () => {
         </div>
 
         {/* Sign in and Sign Up */}
-        <Box className="mr-12">
+        <Box className="ml-36 md:ml-0">
           <SignedOut>
             <SignInButton />
           </SignedOut>

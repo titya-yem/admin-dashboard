@@ -7,7 +7,7 @@ const layout = (children: PropsWithChildren) => {
   return (
     <div>
       <Flex>
-        <Box className="w-[200px]">
+        <Box className="w-[230px]">
           <SideBarNav />
         </Box>
         <Box className="w-screen">
