@@ -1,9 +1,9 @@
-import dashboard from "@/public/svg/Control Panel.svg";
-import budget from "@/public/svg/Money Box.svg";
-import transaction from "@/public/svg/Transaction.svg";
-import account from "@/public/svg/Ledger.svg";
-import payment from "@/public/svg/Online Payment.svg";
-import report from "@/public/svg/Graph Report.svg";
+import dashboard from "@/public/svg/sideBar/Control Panel.svg";
+import budget from "@/public/svg/sideBar/Money Box.svg";
+import transaction from "@/public/svg/sideBar/Transaction.svg";
+import account from "@/public/svg/sideBar/Ledger.svg";
+import payment from "@/public/svg/sideBar/Online Payment.svg";
+import report from "@/public/svg/sideBar/Graph Report.svg";
 
 interface SideBarType {
   image: string;
