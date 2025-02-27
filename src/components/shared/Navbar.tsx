@@ -5,35 +5,36 @@ import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 const Navbar = () => {
   return (
-    <Container>
-      <header className="mt-5">
-        <Flex justify="center" align="center" className="gap-x-10">
-          {/* Search */}
-          <div className="hidden md:block w-[500px] lg:w-[700px] xl:w-[1280px]">
-            {/* I will make this input chatable with AI */}
-            <TextField.Root placeholder="Chat with AI">
-              <TextField.Slot>
-                <Image
-                  src={chatIcon}
-                  alt="Search icon"
-                  className="w-full h-[16px]"
-                />
-              </TextField.Slot>
-            </TextField.Root>
-          </div>
+    <header className="mx-auto mt-2">
+      <Flex justify="center" align="center" className="gap-x-6">
+        {/* Search */}
+        <div className="hidden md:block w-[500px] lg:w-[700px] xl:w-[1200px]">
+          {/* I will make this input chatable with AI */}
+          <TextField.Root
+            placeholder="Chat with AI"
+            className="h-12 rounded-lg"
+          >
+            <TextField.Slot>
+              <Image
+                src={chatIcon}
+                alt="Search icon"
+                className="w-full h-[16px]"
+              />
+            </TextField.Slot>
+          </TextField.Root>
+        </div>
 
-          {/* Sign in and Sign Up */}
-          <Box className="ml-36 md:ml-0">
-            <SignedOut>
-              <SignInButton />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-          </Box>
-        </Flex>
-      </header>
-    </Container>
+        {/* Sign in and Sign Up */}
+        <Box className="ml-36 md:ml-0">
+          <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+        </Box>
+      </Flex>
+    </header>
   );
 };
 

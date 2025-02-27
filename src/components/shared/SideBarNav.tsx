@@ -11,12 +11,6 @@ const SideBarNav = () => {
 
   return (
     <aside className="pl-2">
-      <Box>
-        <h1 className="text-lg md:text-xl lg:text-2xl py-6 font-bold text-[#6055E0]">
-          Kith Financial
-        </h1>
-      </Box>
-
       <Box className="w-[38px] md:w-full">
         <Text as="p" className="text-sm font-medium text-gray-400">
           Menu

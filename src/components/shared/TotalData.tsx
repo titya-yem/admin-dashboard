@@ -8,13 +8,13 @@ interface totalProps {
   total: number;
 }
 
-const Total = ({ image, alt, name, total }: totalProps) => {
+const TotalData = ({ image, alt, name, total }: totalProps) => {
   return (
-    <Box className="mt-6 space-y-3 shadow-lg p-5 rounded-lg">
+    <Box className="w-[200px] mx-auto md:mx-0 mt-3 space-y-3 shadow p-5 rounded-lg">
       {/* Icon and name */}
       <div className="flex items-center space-x-3">
         <Image src={image} alt={alt} className="w-[20px] md:w-[25px]" />
-        <Text as="p" className=" font-medium">
+        <Text as="p" className="font-medium">
           {name}
         </Text>
       </div>
@@ -22,11 +22,11 @@ const Total = ({ image, alt, name, total }: totalProps) => {
       {/* Totals */}
       <Box>
         <Heading as="h3">
-          ${new Intl.NumberFormat("en-US").format(total)}
+          $ {new Intl.NumberFormat("en-US").format(total)}
         </Heading>
       </Box>
     </Box>
   );
 };
 
-export default Total;
+export default TotalData;

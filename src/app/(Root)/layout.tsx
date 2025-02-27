@@ -5,9 +5,9 @@ import SideBarNav from "@/components/shared/SideBarNav";
 
 const layout = (children: PropsWithChildren) => {
   return (
-    <div className="max-w-[1530px]">
+    <div className="max-w-[1580px]">
       <Flex>
-        <Box className="w-[230px] lg:w-[200px]">
+        <Box className="md:w-[230px] lg:w-[200px]">
           <SideBarNav />
         </Box>
         <Box className="w-screen">

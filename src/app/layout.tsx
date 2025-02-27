@@ -3,6 +3,7 @@ import "./globals.css";
 import "@radix-ui/themes/styles.css";
 import { Theme } from "@radix-ui/themes";
 import { ClerkProvider } from "@clerk/nextjs";
+import Navbar from "@/components/shared/Navbar";
 
 export const metadata: Metadata = {
   title: "Kith Financial",
@@ -18,7 +19,15 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={`antialiased`}>
-          <Theme>{children}</Theme>
+          <Theme>
+            <div className="flex-between max-w-[1530px]">
+              <h1 className="text-lg md:text-xl lg:text-2xl pl-2 py-6 font-bold text-[#6055E0]">
+                Kith Financial
+              </h1>
+              <Navbar />
+            </div>
+            {children}
+          </Theme>
         </body>
       </html>
     </ClerkProvider>
