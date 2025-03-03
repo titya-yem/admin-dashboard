@@ -20,12 +20,7 @@ export default function RootLayout({
       <html lang="en">
         <body className={`antialiased`}>
           <Theme>
-            <div className="flex-between max-w-[1530px]">
-              <h1 className="text-lg md:text-xl lg:text-2xl pl-2 py-6 font-bold text-[#6055E0]">
-                Kith Financial
-              </h1>
-              <Navbar />
-            </div>
+            <Navbar />
             {children}
           </Theme>
         </body>

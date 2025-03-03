@@ -10,8 +10,8 @@ const SideBarNav = () => {
   const pathName = usePathname();
 
   return (
-    <aside className="pl-2">
-      <Box className="w-[38px] md:w-full">
+    <aside className="hidden md:block pl-2">
+      <Box className="w-full">
         <Text as="p" className="text-sm font-medium text-gray-400">
           Menu
         </Text>
