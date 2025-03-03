@@ -9,10 +9,13 @@ const Homepage = () => {
         <Total />
 
         {/* Charts */}
-        <Box></Box>
+        <Box>
+          
+        </Box>
       </div>
 
       {/* Right sideBar */}
+      <Box></Box>
     </main>
   );
 };
