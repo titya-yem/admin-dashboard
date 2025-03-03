@@ -21,34 +21,36 @@ type DataType = {
 };
 
 const data: DataType[] = [
-  { name: "Page A", earning: 4000, expenses: 4000, savings: 2400 },
-  { name: "Page B", earning: 4000, expenses: 3000, savings: 1398 },
-  { name: "Page C", earning: 4000, expenses: 2000, savings: 9800 },
-  { name: "Page D", earning: 4000, expenses: 2780, savings: 3908 },
-  { name: "Page E", earning: 4000, expenses: 1890, savings: 4800 },
-  { name: "Page F", earning: 4000, expenses: 2390, savings: 3800 },
-  { name: "Page G", earning: 4000, expenses: 3490, savings: 4300 },
+  { name: "January", earning: 4000, expenses: 4000, savings: 2400 },
+  { name: "February", earning: 4000, expenses: 3000, savings: 1398 },
+  { name: "March", earning: 4000, expenses: 2000, savings: 9800 },
+  { name: "April", earning: 4000, expenses: 2780, savings: 3908 },
+  { name: "May", earning: 4000, expenses: 1890, savings: 4800 },
+  { name: "June", earning: 4000, expenses: 2390, savings: 3800 },
+  { name: "July", earning: 4000, expenses: 3490, savings: 4300 },
 ];
 
 const HomeCart = () => {
   return (
     <Box>
-      <Box className="max-w-[500px] h-96 bg-white rounded-lg shadow p-4 mt-4">
-        <h1 className="text-lg md:text-lg pb-2 font-bold">
+      <Box className="max-w-[500px] h-[420px] bg-white rounded-lg shadow mt-6">
+        <h1 className="text-lg md:text-lg py-6 pl-2 font-bold text-[#6055E0]">
           Financial Overview
         </h1>
-        <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={data} margin={{ right: 30 }}>
-            <CartesianGrid strokeDasharray="5 5" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Line type="monotone" dataKey="earning" stroke="#8884d8" />
-            <Line type="monotone" dataKey="expenses" stroke="#82ca9d" />
-            <Line type="monotone" dataKey="savings" stroke="#ffc658" />
-          </LineChart>
-        </ResponsiveContainer>
+        <Box className="h-80">
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart data={data} margin={{ right: 30 }}>
+              <CartesianGrid strokeDasharray="5 5" />
+              <XAxis dataKey="name" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Line type="monotone" dataKey="earning" stroke="#8884d8" />
+              <Line type="monotone" dataKey="expenses" stroke="#82ca9d" />
+              <Line type="monotone" dataKey="savings" stroke="#ffc658" />
+            </LineChart>
+          </ResponsiveContainer>
+        </Box>
       </Box>
     </Box>
   );
