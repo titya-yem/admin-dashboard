@@ -1,9 +1,12 @@
 "use client";
 
-import { Box } from "@radix-ui/themes";
 import Image from "next/image";
+import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { Button } from "../ui/button";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { Box } from "@radix-ui/themes";
 import {
   Sheet,
   SheetContent,
@@ -14,9 +17,7 @@ import {
 import toggle from "@/public/svg/menu.svg";
 import { SideBar } from "@/constants/SideBar";
 import { Text } from "@radix-ui/themes";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
+import ModeToggle from "@/components/shared/ModeToggle";
 
 const Navbar = () => {
   const pathName = usePathname();
@@ -101,7 +102,8 @@ const Navbar = () => {
       </div>
 
       {/* Desktop screen */}
-      <div className="hidden md:block">
+      <div className="hidden md:flex items-center gap-4">
+        <ModeToggle />
         <SignedOut>
           <Button
             asChild

@@ -11,7 +11,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { Box } from "@radix-ui/themes";
+import { Box, Text } from "@radix-ui/themes";
 
 type DataType = {
   name: string;
@@ -34,10 +34,20 @@ const HomeCart = () => {
   return (
     <Box>
       <Box className="max-w-[500px] h-[420px] bg-white rounded-lg shadow mt-6">
-        <h1 className="text-lg md:text-lg py-6 pl-2 font-bold text-[#6055E0]">
+        <h1 className="text-lg py-3 pl-2 font-bold text-[#6055E0]">
           Financial Overview
         </h1>
-        <Box className="h-80">
+        <Text className="text-xl font-bold pl-2 text-[#4b40cb]">
+          Total Amount: $
+          {new Intl.NumberFormat("en-US").format(
+            data.reduce(
+              (acc, curr) => acc + curr.earning + curr.savings - curr.expenses,
+              0
+            )
+          )}
+        </Text>
+
+        <Box className="pt-4 h-80">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={data} margin={{ right: 30 }}>
               <CartesianGrid strokeDasharray="5 5" />

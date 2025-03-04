@@ -19,7 +19,7 @@ export const SideBar: SideBarType[] = [
   },
   {
     image: budget,
-    name: "Budget Planner",
+    name: "Budget Planner (AI)",
     link: "/budget-planner",
   },
   {
